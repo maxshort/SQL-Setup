@@ -37,7 +37,7 @@
 		<type label="SET" length="1" sql="SET" quote=""/>
 		<type label="Bit" length="0" sql="bit" quote=""/>
 	</group>
-</datatypes><table x="150" y="77" name="Locations">
+</datatypes><table x="156" y="34" name="Hotel">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -60,9 +60,15 @@
 <default>NULL</default></row>
 <row name="Location" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Locations" row="id" />
+<default>NULL</default><relation table="Hotel" row="id" />
 </row>
 <row name="Button_Image" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="Advertising_Image" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="Description" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
@@ -72,7 +78,8 @@
 <table x="623" y="62" name="Categories">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
-<default>NULL</default></row>
+<default>NULL</default><relation table="Menu Item" row="id" />
+</row>
 <row name="Name" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -84,7 +91,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="855" y="74" name="Menu Item">
+<table x="914" y="209" name="Menu Item">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -93,8 +100,7 @@
 <default>NULL</default></row>
 <row name="Category" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Categories" row="id" />
-</row>
+<default>NULL</default></row>
 <row name="Description" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
@@ -114,12 +120,16 @@
 <table x="316" y="364" name="Ingredients">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
-<default>NULL</default></row>
+<default>NULL</default><relation table="Restaurants" row="id" />
+</row>
 <row name="Name" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="In Stock" null="1" autoincrement="0">
 <datatype>bit</datatype>
+<default>NULL</default></row>
+<row name="Restaurant" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
@@ -139,21 +149,6 @@
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>menu_item</part>
-</key>
-</table>
-<table x="111" y="208" name="Restaurant Pictures">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="restaurant" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Restaurants" row="id" />
-</row>
-<row name="Picture Location" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>id</part>
 </key>
 </table>
 </sql>
