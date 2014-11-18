@@ -19,15 +19,7 @@ CREATE TABLE Restaurants
 	FOREIGN KEY (hotel) REFERENCES Hotels(id),
 	PRIMARY KEY(id)
 );
-/*These were intned for the slide show.*/
-CREATE TABLE RestaurantPictures
-(
-	id INT NOT NULL AUTO_INCREMENT,
-	restaurant INT,
-	picture_location VARCHAR(500),
-	FOREIGN KEY (restaurant) REFERENCES Restaurants(id),
-	PRIMARY KEY(id)
-);
+
 
 CREATE TABLE Categories
 (
@@ -66,6 +58,8 @@ CREATE TABLE IngredientsInItems
 	menu_item INT,
 	ingredient INT,
 	essential BIT,
+	PRIMARY KEY (menu_item)
+	PRIMARY KEY (ingredient)
 	FOREIGN KEY (menu_item) REFERENCES MenuItems(id),
 	FOREIGN KEY (ingredient) REFERENCES Ingredients(id)
 );
