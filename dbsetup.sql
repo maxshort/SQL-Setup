@@ -58,8 +58,7 @@ CREATE TABLE IngredientsInItems
 	menu_item INT,
 	ingredient INT,
 	essential BIT,
-	PRIMARY KEY (menu_item)
-	PRIMARY KEY (ingredient)
+	PRIMARY KEY (menu_item,ingredient),
 	FOREIGN KEY (menu_item) REFERENCES MenuItems(id),
 	FOREIGN KEY (ingredient) REFERENCES Ingredients(id)
 );
